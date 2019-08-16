@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     stages {
@@ -20,6 +19,7 @@ pipeline {
                 withDockerContainer (image: 'kevlank/train-schedule') {    
                     sh 'cd /home'
                     sh 'ls -l'
+                    sh 'echo $(curl localhost:8080)'
                 }
             }
         }
