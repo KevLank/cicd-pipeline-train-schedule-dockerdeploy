@@ -16,6 +16,9 @@ pipeline {
                 script {
                     app = docker.build("kevlank/train-schedule")
                 }
+                withDockerContainer (image: 'train-schedule') {    
+                         sh 'pwd'
+                }
             }
         }
 
