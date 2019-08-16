@@ -15,6 +15,9 @@ pipeline {
             steps {
                 script {
                     app = docker.build("kevlank/train-schedule")
+                    app.inside {
+                        sh 'pwd'
+                    }
                 }
             }
         }
