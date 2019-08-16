@@ -17,7 +17,7 @@ pipeline {
                     app = docker.build("kevlank/train-schedule")
                 }
                 withDockerContainer (image: 'kevlank/train-schedule') {    
-                    sh 'whoami'
+                    sh 'hostname'
                 }
             }
         }
