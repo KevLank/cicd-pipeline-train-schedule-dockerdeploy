@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
     stages {
@@ -17,7 +18,8 @@ pipeline {
                     app = docker.build("kevlank/train-schedule")
                 }
                 withDockerContainer (image: 'kevlank/train-schedule') {    
-                    sh 'hostname'
+                    sh 'cd /home'
+                    sh 'ls -l'
                 }
             }
         }
