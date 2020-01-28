@@ -3,9 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Running build automation'
+                echo 'Checking Maven version'
                 sh 'mvn --version'
-                archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
         stage('Build Docker Image') {
