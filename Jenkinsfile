@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'Checking Maven version'
                 sh 'mvn --version'
+                sh 'ls -l'
             }
         }
         stage('Build Docker Image') {
